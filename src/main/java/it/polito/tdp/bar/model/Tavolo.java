@@ -1,6 +1,6 @@
 package it.polito.tdp.bar.model;
 
-public class Tavolo {
+public class Tavolo implements Comparable<Tavolo>{
 	private int posti;
 	private boolean occupato;
 	
@@ -21,6 +21,11 @@ public class Tavolo {
 	}
 	public void setOccupato(boolean occupato) {
 		this.occupato = occupato;
+	}
+
+	@Override
+	public int compareTo(Tavolo o) {
+		return this.posti - o.getPosti();
 	}
 	
 	
